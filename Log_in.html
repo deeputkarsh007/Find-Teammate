@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FT-Log In</title>
+    <link rel="stylesheet" href="Log_in.css">
+    <link rel="icon" href="Image/Icon1.png" type="image/x-icon">
+</head>
+
+<body>
+    <div class="main">
+        <div class="navbar">
+            <div class="icon">
+                <img src="Image/Icon1.png" height="100px" width="100px">
+                <h2 class="logo">FIND TEAMMATE</h2>
+            </div>
+
+            <div class="menu">
+                <ul>
+                    <li><a href="HTML_part.html">HOME</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="Contact_Us.html">CONTACT</a></li>
+                    <li><a href="SignUp.html"><button class="btn">Sign Up</button><a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="content">
+            <div class="form">
+                <form onsubmit="login()" id="loginForm" class="card-body px-5 py-4">
+                    <h2>Log In Here</h2>
+                    <input id="email" name="email" placeholder="Enter Your Email">
+                    <input id="password" type="password" placeholder="Enter Your password">
+                    <center><small><span id="error" style="color: rgb(0, 0, 0)"></small></center><br>
+                    <center><button type="submit" class="btn btn-primary">Login</button>
+                    <p class="link">Don't have an account ?</p><br>
+                    <center><a href="SignUp.html">Sign Up</a></center>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>
+
+
+    <script src="firebase.js"></script>
+    <script src="Log_in.js"></script>
+</body>
+
+</html>

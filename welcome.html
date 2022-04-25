@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FT-Welcome</title>
+  <link rel="stylesheet" href="welcome.css">
+  <link rel="icon" href="Image/Icon1.png" type="image/x-icon">
+</head>
+
+<body>
+
+</div></center> 
+  <div class="main">
+    <div class="navbar">
+      <div class="icon">
+        <img src="Image/Icon1.png" height="100px" width="100px">
+        <h2 class="logo">FIND TEAMMATE</h2>
+      </div>
+    </div>
+
+    <div class="menu">
+      <ul>
+        <li><a href="HTML_part.html">HOME</a></li>
+        <li><a href="#">ABOUT</a></li>
+        <li><a href="Contact_Us.html">CONTACT</a></li>
+        <li><a href="list.html">LIST</a></li>
+        <li><button class="btn btn-danger" onclick="logout()">Logout</button> </li>
+      </ul>
+    </div>
+
+    <center><div style="margin:100px"><br><br><br><br>
+    <span id="user" class="message">Hello, < email-id ></email-id></span>
+    <div class="success"><span>Welcome to Find-Teammate, You are successfully loged in!!!<br>If you have not regestered your information then complete this form, ignore otherwise</span><br></center>
+    <div class="content"><center>
+    
+
+
+
+      <div class="form">
+        <form onsubmit="login()" id="loginForm" class="card-body px-5 py-4">
+          <h2>Register Your Information</h2>
+
+          <label for="Name">Full Name:  </label>
+          <input type="text" class="input-box" id="Name" placeholder="Full Name"><br>
+
+          <label for="DOB">Date of Birth:  </label>
+          <input type="date" class="input-box" id="DOB" placeholder="Date of Birth"><br>
+
+          <label for="Contact">Contact No.:  </label>
+          <input type="tel" class="input-box" id="Contact" placeholder="Contact Number"><br>
+
+          <label for="Mail">Email Address:  </label>
+          <input type="email" class="input-box" id="Mail" placeholder="E-Mail Address"><br><br><br>
+
+          <label for="Gender">Gender:  </label>
+          <select id="Gender">
+            <option value="">--Gender--</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+          </select><br>
+
+          <label for="College">Name of College:  </label>
+          <input type="text" class="input-box" id="College" type="text" placeholder="College"><br>
+
+          <label for="Year of study">Year of study:  </label>
+          <input type="text" class="input-box" id="Year of study" type="text" placeholder="YYYY to YYYY"><br>
+
+          <label for="Linked In">Linked In Handle:  </label>
+          <input type="text" class="input-box" id="Linked In" type="url" placeholder="Linked In Handle"><br>
+
+          <label for="Git Hub">Git Hub:  </label>
+          <input type="text" class="input-box" id="Git Hub" type="url" placeholder="Git Hub Link"><br>
+
+          <label for="expertise">Expertise:  </label>
+          <input class="input-box" id="expertise" type="url" placeholder="Expertise"><br>
+
+          <!-- <label for="profile">Profile Picture:  </label>
+          <input type="file" class="input-box" id="profile" placeholder="profile pic"> -->
+
+          <br><br>
+          <button style="width: 120px; height: 30px; background-color: chartreuse;width: 100px;
+          border: 1px solid black;
+          font-size: 25px;
+          font-family: 20px Arial, Helvetica, sans-serif;
+          font-weight: 400;
+          color:  black;
+          border-radius: 7px;" onclick="writeData()" class="Save-Button" id="savebtn" type="button">Save</button>
+        </form>
+      </div>
+    </div>
+  </center>
+  </div>
+
+
+  <div style="align-items: flex-start;" class="">
+    <br> <br> <br> <br> <br> <br> <br>
+   <center><ul>
+      
+       <li><a href="welcome.html">Register</a></li>
+       <li><a href="list.html">Teammates</a></li>
+       <li><a href="project_form.html">Launch Project</a></li>
+       <li><a href="Project_list.html">Projects</a></li>
+ 
+   </ul></center>
+</div>
+</body>
+
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+ https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-storage.js"></script>
+
+
+<script src="firebase.js"></script>
+<script src="welcome.js"></script>
+
+
+</html>

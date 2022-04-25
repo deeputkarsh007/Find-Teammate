@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FT-List</title>
+    <link rel="stylesheet" href="list.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoxA+058RXPxPg6fy4IWVTNhBE263XmFCJ1SAwiGgFAW/dAi563X" crossorigin="anonymous">
+    <link rel="icon" href="Image/Icon1.png" type="image/x-icon">
+</head>
+!
+
+<body>
+    <div class="main">
+        <div class="navbar">
+            <div class="icon">
+                <img src="Image/Icon1.png" height="100px" width="100px">
+                <h2 class="logo">FIND TEAMMATE</h2>
+            </div>
+        </div>
+
+        <div class="menu">
+            <ul>
+                <li><a href="HTML_part.html">HOME</a></li>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="Contact_Us.html">CONTACT</a></li>
+                <li><button class="btn btn-danger" onclick="logout()">Logout</button> </li>
+            </ul>
+        </div>
+
+        <div class="container">
+
+            <table class="table">
+
+                <thead>
+
+                    <th>Sno</th>
+                    <th>Name</th>
+                    <th>Date of Birth</th>
+                    <th>Gender</th>
+                    <th>Contact No.</th>
+                    <th>E-Mail</th>
+                    <th>College</th>
+                    <th>Year of Study</th>
+                    <th>Linked In</th>
+                    <th>Git Hub</th>
+                    <th>Profile</th>
+                    <th>Expertise</th>
+
+                </thead>
+
+                <tbody id="tbody1">
+                    
+                </tbody>
+
+            </table>
+
+        </div>
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
+        <!-- <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-database.js"></script> -->
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+      https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-analytics.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>
+
+
+        <script id="MainScript">
+            var firebaseConfig = {
+                apiKey: "AIzaSyCF2Cw6NfyZMHe3iajCL8shaP5obm_yjAg",
+                authDomain: "find-teammate-56e62.firebaseapp.com",
+                projectId: "find-teammate-56e62",
+                storageBucket: "find-teammate-56e62.appspot.com",
+                messagingSenderId: "384265739063",
+                appId: "1:384265739063:web:1cdf7819cd7890170658b2",
+                measurementId: "G-3HRE2BB4C0"
+            };
+
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+
+
+            function SelectAllData() {
+                firebase.database().ref('User').once('value',
+                    function (AllRecords) {
+                        AllRecords.forEach(
+                            function (CurrentRecord) {
+                                var name = CurrentRecord.val().name;
+                                var Date_of_Birth = CurrentRecord.val().Date_of_Birth;
+                                var contact = CurrentRecord.val().contact;
+                                var email_address = CurrentRecord.val().email_address;
+                                var gender = CurrentRecord.val().gender;
+                                var college = CurrentRecord.val().college;
+                                var Year_of_Study = CurrentRecord.val().Year_of_Study;
+                                var Linked_In = CurrentRecord.val().Linked_In;
+                                var Git_Hub = CurrentRecord.val().Git_Hub;
+                                var profile_picture = CurrentRecord.val().profile_picture;
+                                var expertise = CurrentRecord.val().expertise;
+                                AddItemsToTable(name, Date_of_Birth, contact, email_address, gender, college, Year_of_Study, Linked_In, Git_Hub, profile_picture, expertise);
+                            }
+                        );
+                    }
+                );
+            }
+            window.onload = SelectAllData;
+
+            var stdNo = 0;
+
+            function AddItemsToTable(name, Date_of_Birth, contact, email_address, gender, college, Year_of_Study, Linked_In, Git_Hub, profile_picture, expertise) {
+                var tbody=document.getElementById('tbody1');
+                var trow = document.createElement('tr');
+                var td1 = document.createElement('td');
+                var td2 = document.createElement('td');
+                var td3 = document.createElement('td');
+                var td4 = document.createElement('td');
+                var td5 = document.createElement('td');
+                var td6 = document.createElement('td');
+                var td7 = document.createElement('td');
+                var td8 = document.createElement('td');
+                var td9 = document.createElement('td');
+                var td10 = document.createElement('td');
+                var td11 = document.createElement('td');
+                var td12 = document.createElement('td');
+
+
+
+                td1.innerHTML = ++stdNo;
+                td2.innerHTML = name;
+                td3.innerHTML = Date_of_Birth;
+                td4.innerHTML = gender;
+                td5.innerHTML = contact;
+                td6.innerHTML = email_address;
+                td7.innerHTML = college;
+                td8.innerHTML = Year_of_Study;
+                td9.innerHTML = Linked_In;
+                td12.innerHTML = expertise;
+                // <a target="_blank" href="https://www.github.com/${Git_Hub}">Github Link</a>;
+                // td11.innerHTML = profile_picture;
+        
+
+                trow.appendChild(td1); trow.appendChild(td2); trow.appendChild(td3); trow.appendChild(td4); trow.appendChild(td5); trow.appendChild(td6); trow.appendChild(td7); trow.appendChild(td8); trow.appendChild(td9); trow.appendChild(td10); trow.appendChild(td11); trow.appendChild(td12);
+                tbody.appendChild(trow);
+
+                
+            fetch('https://api.github.com/users/' + Git_Hub)
+            .then(response => response.json())
+            .then(data=>gitData(data))
+            .catch(error => console.log(error))
+
+            function gitData(data){
+                var main = document.getElementById("profile");
+                var div = document.createElement("div");
+                td10.innerHTML = data.name + data.location +data.followers +data.following +data.company + data.public_gits +data.blog +data.public_repos;
+                td11.innerHTML = '<img width=150px height=150px src = " ' +data.avatar_url +'"/>'
+            }
+
+            }
+
+
+            
+        </script>
+   <div style="align-items: flex-start;" class="">
+    <br> <br> <br> <br> <br> <br> <br>
+   <center><ul>
+      
+       <li><a href="welcome.html">Register</a></li>
+       <li><a href="list.html">Teammates</a></li>
+       <li><a href="project_form.html">Launch Project</a></li>
+       <li><a href="Project_list.html">Projects</a></li>
+ 
+   </ul></center>
+</div>
+<script src="welcome.js"></script>
+<script src="list.js"></script>
+</body>
+
+</html>

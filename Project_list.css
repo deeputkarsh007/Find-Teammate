@@ -1,0 +1,159 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.main {
+    width: 100%;
+    /* background: linear-gradient(to top, rgba(255,255,255,0)50%,rgba(255,255,255,0)50%),url(https://st2.depositphotos.com/4756885/7962/v/450/depositphotos_79625916-stock-illustration-vector-illustration-of-a-world.jpg);  */
+    background-position: left;
+    background-size: cover;
+    height: 109vh;
+}
+
+.navbar {
+    width: 400px;
+    height: 75px;
+    margin: 0;
+}
+
+.icon {
+    width: 700px;
+    float: inline-start;
+    height: 70px;
+}
+
+.logo {
+    margin-left: -40px;
+    margin-top: -100px;
+    color: #191970;
+    font-size: 48px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding-left: 200PX;
+    float: left;
+    padding-top: -1000px;
+
+}
+
+.menu {
+    margin-top: "-200px";
+    padding-top: -50px;
+    width: 1250px;
+    float: left;
+    height: 40px;
+    align-content: right;
+}
+
+ul {
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ul li {
+    list-style: none;
+    margin-left: 40px;
+    margin-top: -120px;
+    font-size: 20px;
+}
+
+ul li a {
+    text-decoration: none;
+    color: 1a1110;
+    font-family: Arial;
+    font-weight: bold;
+    transition: 0.4s ease-in-out;
+}
+
+ul li a:hover {
+    color: black;
+}
+
+.btn {
+    width: 100px;
+    height: 40px;
+    background: #1E90FF;
+    border: 1.5px solid black;
+    font-size: 25px;
+    font-family: 20px Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    color: #1a1110;
+    border-radius: 7px;
+}
+
+.btn {
+    text-decoration: none;
+    /* color: red; */
+    transition: .4s ease;
+}
+
+.btn:hover {
+    background-color: 	#0000FF;
+    color: black;
+}
+
+.cnabtn {
+    width: 250px;
+    height: 40px;
+    background-color: #1E90FF;
+    border: 1.5px solid black;
+    font-size: 25px;
+    font-family: 10px Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    color: rgb(228, 214, 20);
+    border-radius: 10px;
+    border: 3px solid rgb(228, 214, 20);
+    margin-left: 500px;
+    margin-top: -100px;
+
+}
+
+.cnabtn {
+    text-decoration: none;
+    /* color: red; */
+    transition: .4s ease;
+}
+
+.cnabtn:hover {
+    background-color: #008000;
+}
+
+.table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    margin-left: 10px;
+    margin-right: 0px;
+    margin-top: -10px;
+    margin-bottom: 50px;
+    font-size: 0.4cm;
+    min-width: 100px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.table thead tr {
+    background-color: 	#4169E1;
+    color: white;
+    text-align: left;
+    font-weight: bold;
+}
+
+.table th,
+.table td {
+    padding: 12px 15px;
+
+}
+
+.table tbody tr {
+    border-bottom: 1px solid #dddd;
+}
+
+.table tbody tr:nth-of-type(even) {
+    background-color: 	#87CEFA;
+}
+
+.table tbody tr:last-of-type {
+    border-bottom: 4px solid 	#4169E1;
+}
